@@ -9,6 +9,9 @@ Vagrant::Config.run do |config|
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "base"
 
+  # Configure Vagrant VM to use Host DNS (via https://gist.github.com/1277049)
+  config.vm.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+
   # This enables Puppet as the default provisioner
   # config.vm.provision :puppet
 
