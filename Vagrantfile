@@ -10,7 +10,7 @@ Vagrant::Config.run do |config|
   config.vm.box = "base"
 
   # This enables Puppet as the default provisioner
-  config.vm.provision :puppet
+  # config.vm.provision :puppet
 
   # If you require verbose output, you can substitute this line for above
   # config.vm.provision :puppet, :options => "--verbose"
@@ -57,10 +57,10 @@ Vagrant::Config.run do |config|
   # #               Managed by Puppet.\n"
   # # }
   #
-  # config.vm.provision :puppet do |puppet|
-  #   puppet.manifests_path = "manifests"
-  #   puppet.manifest_file  = "base.pp"
-  # end
+  config.vm.provision :puppet do |puppet|
+    puppet.manifests_path = "manifests"
+    puppet.manifest_file  = "default.pp"
+  end
 
   # Enable provisioning with chef solo, specifying a cookbooks path (relative
   # to this Vagrantfile), and adding some recipes and/or roles.
