@@ -69,4 +69,3 @@ file { "/etc/apache2/sites-available/default":
   ensure => present,
   source => "/vagrant/manifests/default",
 }  
-
